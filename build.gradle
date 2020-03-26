@@ -9,6 +9,10 @@ springBoot {
     mainClassName = 'com.bacrossland.example.Main'
 }
 
+bootRun {
+    standardInput = System.in
+}
+
 configurations {
     developmentOnly
     runtimeClasspath {
