@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+    id 'java'
+}
+
+sourceCompatibility = '11'
+springBoot {
+    mainClassName = 'com.bacrossland.example.Main'
+}
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework.shell', name: 'spring-shell-starter', version: "${springShellVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
